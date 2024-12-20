@@ -1,0 +1,137 @@
+/* bootstarp link */
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+/* google font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --blue-color: #3e36b5;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  scroll-behavior: smooth;
+  font-family: "Roboto", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* login */
+.login {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--blue-color);
+}
+
+.hr::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 47%;
+  height: 1px;
+  background-color: #ccc;
+}
+.hr::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 47%;
+  height: 1px;
+  background-color: #ccc;
+}
+
+.login input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  text-align: end;
+}
+
+@media (max-width: 1024px) {
+  .leftside img {
+    width: 24rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .leftside {
+    display: none !important;
+  }
+  .login {
+    background-color: #f8f9fa;
+  }
+  
+  .login .content {
+    width: 75% !important;
+    margin: auto;
+  }
+  .rightside {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 481px) {
+  .login .content {
+    width: 100% !important;
+  }
+}
+
+/* /login */
+
+/* registrayion */
+
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #777;
+  background-color: #fff;
+}
+
+.step.active .circle {
+  background-image: url(./assets/done.svg);
+  background-color: var(--blue-color);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+  color: transparent;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: #ccc;
+}
+
+.lineStep3 {
+  width: 100%;
+  height: 2px;
+  background-color: #ccc;
+}
+
+.lineStep3.line-active {
+  background-color: #3e36b5;
+}
