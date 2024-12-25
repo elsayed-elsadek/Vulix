@@ -185,7 +185,7 @@ const Step2 = () => {
 
                                 <div className=" d-flex flex-wrap justify-content-between gap-3">
                                     {/* first side: الحالة */}
-                                    <div className="d-flex align-items-center gap-2 mb-3">
+                                    <div className="d-flex align-items-center gap-2 mb-3 m-auto">
                                         <div className="d-flex gap-1 align-items-center">
                                             <label className="d-flex rounded-4 p-2 text-center" htmlFor="graduate"
                                                 style={{ backgroundColor: "#EFEFEF" }}>
@@ -226,7 +226,7 @@ const Step2 = () => {
                                     </div>
 
                                     {/* sec side: النوع */}
-                                    <div className="d-flex gap-2 align-items-center mb-3">
+                                    <div className="d-flex gap-2 align-items-center mb-3 m-auto">
                                         <div className="d-flex gap-1 align-items-center">
                                             <label className="d-flex rounded-4 p-2 text-center" htmlFor="male"
                                                 style={{ backgroundColor: "#EFEFEF" }}>

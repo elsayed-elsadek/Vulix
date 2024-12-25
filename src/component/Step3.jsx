@@ -41,7 +41,7 @@ const Step3 = () => {
 
     return (
         <>
-            <div className="login">
+            <div className="step3 login">
                 <div className="d-flex align-items-center justify-content-between m-auto mx-2 p-2 gap-2">
                     {/* Left Side - Image */}
                     <div className="leftside d-flex m-auto">

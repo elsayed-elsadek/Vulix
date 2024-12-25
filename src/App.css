@@ -7,23 +7,28 @@
 :root {
   --blue-color: #3e36b5;
 }
-* {
+*{
   padding: 0;
+  margin: 0;
+}
+h3{
   margin: 0;
 }
 
 body {
   scroll-behavior: smooth;
   font-family: "Roboto", serif;
-  font-weight: 300;
+  font-weight: 700;
   font-style: normal;
 }
+
 
 /* login */
 .login {
   height: 100vh;
   width: 100%;
   background-color: var(--blue-color);
+  overflow: hidden;
 }
 
 .hr::before {
@@ -66,7 +71,7 @@ body {
   
   .login .content {
     width: 75% !important;
-    margin: auto;
+    margin: auto !important;
   }
   .rightside {
     width: 100% !important;
@@ -134,4 +139,56 @@ body {
 
 .lineStep3.line-active {
   background-color: #3e36b5;
+}
+
+
+/* navbar */
+
+.inputGroup .propertisIcon{
+  position: absolute;
+  left: 28%;
+  top: 30%;
+}
+
+.inputGroup .serachIcon{
+  position: absolute;
+  right: 27%;
+  top: 30%;
+}
+.inputGroup input::placeholder{
+text-align: end;
+}
+
+@media(max-width:768px){
+  .inputGroup input {
+    width: 75% !important;
+  }
+  .inputGroup .propertisIcon{
+    left: 17%;
+  }
+  
+  .inputGroup .serachIcon{
+    right: 17%;
+  }
+}
+
+@media(max-width:481px){
+  .inputGroup {
+    position: absolute !important;
+    top: 12%;
+    right: 0;
+    width: 100% !important;
+  }
+
+  .inputGroup input {
+width: 90% !important;
+  }
+
+  .inputGroup .propertisIcon{
+    left: 10%;
+  }
+  
+  .inputGroup .serachIcon{
+    right: 10%;
+  }
 }

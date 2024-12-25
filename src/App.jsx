@@ -8,6 +8,10 @@ import Registration from './pages/Registration';
 import Step1 from './component/Step1';
 import Step2 from './component/Step2';
 import Step3 from './component/Step3';
+import ForgetPass from './pages/ForgetPass';
+import ForgetpassStep1 from "./component/ForgetpassStep1"
+import ForgetpassStep2 from './component/ForgetpassStep2';
+import ForgetpassStep3 from './component/ForgetpassStep3';
 
 function App() {
   return (
@@ -19,6 +23,12 @@ function App() {
         <Route path="/step1" element={<Step1 />} />
         <Route path="/step2" element={<Step2 />} />
         <Route path="/step3" element={<Step3 />} />
+        <Route path="/forgetpassword" element={<ForgetPass />} />
+        <Route path='/forgetpassstep1' element={<ForgetpassStep1 />} />
+        <Route path='/forgetpassstep2' element={<ForgetpassStep2 />} />
+        <Route path='/forgetpassstep3' element={<ForgetpassStep3 />} />
+
+
 
 
       </Routes>
