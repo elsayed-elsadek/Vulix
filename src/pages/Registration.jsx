@@ -28,41 +28,42 @@ const Registration = () => {
             isValid = false;
         }
 
-        if (!userData.userPass || userData.userPass.length < 6) {
-            newErrors.userPass = 'كلمة المرور يجب أن تكون 6 أحرف على الأقل';
+        if (!userData.userPass || userData.userPass.length < 8) {
+            newErrors.userPass = 'كلمة المرور يجب أن تكون 8 أحرف على الأقل';
             isValid = false;
         }
 
         setErrors(newErrors);
         return isValid;
     };
-    const handleSubmit = async (e) => {
+     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!validateForm()) return;
+        // تحقق محلي
+        if (!validateForm()) {
+            if (errors.userPass) {
+                setRegistrationError(errors.userPass); // عرض خطأ كلمة المرور
+            }
+            return;
+        }
 
         setIsLoading(true);
 
         try {
-            // التأكد من أن البيانات يتم إرسالها بشكل صحيح
+            // إرسال البيانات إلى الخادم
             const response = await register(userData.userName, userData.userEmail, userData.userPass);
 
             console.log('Registration successful:', response);
-            // تنظيف الأخطاء السابقة
-            setRegistrationError('');
-            // إعادة توجيه المستخدم للصفحة التالية
-            navigate("/step1");
-
+            setRegistrationError(''); // تنظيف الأخطاء السابقة
+            navigate("/step1"); // إعادة التوجيه
         } catch (error) {
             console.error('Registration error:', error);
 
-            // التحقق إذا كان الخطأ بسبب البريد الإلكتروني الموجود
             if (error?.response?.data?.error?.email) {
                 setRegistrationError('البريد الإلكتروني مسجل بالفعل');
             } else {
                 setRegistrationError('حدث خطأ أثناء التسجيل، يرجى المحاولة لاحقًا');
             }
-
         } finally {
             setIsLoading(false);
         }
