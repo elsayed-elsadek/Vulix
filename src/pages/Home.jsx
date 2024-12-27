@@ -1,11 +1,14 @@
-import Navbar from "../component/Navbar"
+import Navbar from "../component/Navbar";
+import ProtectedPage from "../layouts/ProtectedPage";
 
 const Home = () => {
-    return (
-        <div>
-            <Navbar />
-        </div>
-    )
-}
+  return (
+    <ProtectedPage>
+      <div>
+        <Navbar />
+      </div>
+    </ProtectedPage>
+  );
+};
 
-export default Home
+export default Home;
