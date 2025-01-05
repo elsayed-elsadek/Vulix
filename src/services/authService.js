@@ -3,8 +3,8 @@ import axios from "axios";
 const BASE_URL = "https://indigo-hawk-956786.hostingersite.com/api/v1"; 
 
 // Login
-export const login = async (email, password) => {
-  const response = await axios.post(`${BASE_URL}/auth/login`, { email, password });
+export const login = async (FormData) => {
+  const response = await axios.post(`${BASE_URL}/auth/login`, FormData);
   return response.data;
 };
 

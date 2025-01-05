@@ -1,13 +1,14 @@
+import { Link } from "react-router-dom";
 import Navbar from "../component/Navbar";
 import ProtectedPage from "../layouts/ProtectedPage";
 
 const Home = () => {
   return (
-    <ProtectedPage>
+    <>
       <div>
-        <Navbar />
+        <Link to={'/login'}>login</Link>
       </div>
-    </ProtectedPage>
+    </>
   );
 };
 

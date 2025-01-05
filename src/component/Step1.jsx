@@ -1,18 +1,9 @@
 import loginImg1 from "../assets/image shaep.svg";
 import logo from "../assets/logo.svg";
-import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+
 
 const Step1 = () => {
-    const [currentStep] = useState(0);
 
-    const navigate = useNavigate();
-
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        navigate("/step2");;
-    };
 
     return (
         <>
@@ -39,18 +30,9 @@ const Step1 = () => {
                             </div>
 
                             {/* Form */}
-                            <form onSubmit={handleSubmit}>
+                            <form >
 
-                                <div className="stepper my-4">
-                                    {[1, 2, 3].map((step, index) => (
-                                        <React.Fragment key={index}>
-                                            <div className={`step ${currentStep === step ? "active" : ""}`}>
-                                                <span className="circle">{step}</span>
-                                            </div>
-                                            {index < 2 && <div className="line"></div>}
-                                        </React.Fragment>
-                                    ))}
-                                </div>
+                               
 
 
                                 <button
